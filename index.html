@@ -1,0 +1,95 @@
+
+<html class="gr__cs_bu_edu"><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title> CS585 Homework : HW[1] Student Name [Nan Zhou]  </title>
+    <style>
+    <!--
+    body{
+    font-family: 'Trebuchet MS', Verdana;
+    }
+    p{
+    font-family: 'Trebuchet MS', Times;
+    margin: 10px 10px 15px 20px;
+    }
+    h3{
+    margin: 5px;
+    }
+    h2{
+    margin: 10px;
+    }
+    h1{
+    margin: 10px 0px 0px 20px;
+    }
+    div.main-body{
+    align:center;
+    margin: 30px;
+    }
+    hr{
+    margin:20px 0px 20px 0px;
+    }
+    -->
+    </style>
+    </head>
+    
+    <body data-gr-c-s-loaded="true">
+    <center>
+    <a href="http://www.bu.edu/"><img src="bu_logo.png" width="119" height="120" border="0"></a>
+    </center>
+    
+    <h1>Assignment 1</h1>
+    <p> 
+     CS 585 HW 1 <br>
+     Nan Zhou <br>
+        Spring, 2021
+    </p>
+    
+    <div class="main-body">
+    <hr>
+    <h2> Problem Definition </h2>
+    <p>
+    1. Create a grayscale image of your face by converting your color image using one of the conversions we discussed in class last week.</br>
+    2. Come up with another way of manipulating your face that produces an interesting output. For example, you may create a blurred image of your grayscale face by assigning to each pixel the average grayscale pixel value of itself and its 8 neighbors. Hint: You may have to run your program a few times to make the blurring noticeable.</br>
+    
+    </p>
+    
+    <hr>
+    <h2> Method and Implementation </h2>
+        <p> 
+            1. Grayscale conversion using: 0.3*R + 0.6*G + 0.1*B method. Need to be careful of the color channels. When the image is read using cv2.imread(), the order of colors is BGR instead of RGB. </br>
+            2. (a) I flip the image vertically by reversing the order of the rows and keeping remaining the same. </br>
+               (b) I used the suggested method to assign each pixel by the average value of itself and its 8 neighbors. This was done using a nested for-loop to search through the entire image. 
+               For example, I[i,j] needs to consider the following: I[i-1,j] + I[i+1,j] + I[i,j-1] + I[i,j+1] + I[i-1,j-1] + I[i+1,j+1] + I[i-1,j+1] + I[i+1,j-1]</br>
+    </p>
+    
+    
+    
+    <hr>
+    <h2> Results</h2>
+    
+    <p>
+    <table width="100%">
+    <tbody><tr><td colspan="6"><center><h3></h3></center></td></tr>
+    <tr>
+    <td> Input Image </td><td> Grayscale </td> <td> Flip Vertically </td> <td> Blur </td> 
+    </tr>
+    <tr>
+        <td> <img width="300px" src="origin.jpg"> </td>
+        <td> <img width="300px" src="gray.jpg"> </td>
+        <td> <img width="300px" src="vertical.jpg"> </td>
+        <td> <img width="300px" src="blur.jpg"> </td>
+    </tr> 
+    
+    
+    
+    </tbody></table>
+    </p>
+    
+    
+
+    </div>
+    
+    
+    
+    
+    
+    </body></html>
